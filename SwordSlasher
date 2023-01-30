@@ -1,0 +1,23 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("DBOL", "Midnight")
+
+local Tab = Window:NewTab("AutoFarm")
+
+Section:NewToggle("Killaura", "Takes DBOL & TREN", function(_G.slay = true;
+
+    spawn(function ()
+        while _G.slay == true do
+            game:GetService("ReplicatedStorage").EventStorage.Attack:InvokeServer()
+            wait()
+        end
+    end) 
+    
+    
+    )
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
